@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Pocket Zero</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        nav {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e0e0e0;
+        }
+
+        .header-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .header-section p {
+            font-size: 1.1rem;
+            color: #888;
+            max-width: 600px;
+        }
+
+        .games-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .category {
+            margin-bottom: 4rem;
+        }
+
+        .category h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .game-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #222;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            border-color: #333;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .game-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid #222;
+        }
+
+        .game-info {
+            padding: 1.5rem;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-description {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .game-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #555;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">POCKET ZER0</div>
+        <div class="nav-links">
+            <a href="Retroconsole website.html">Home</a>
+        </div>
+    </nav>
+
+    <div class="header-section">
+        <h1>Game Library</h1>
+        <p>Every classic game you remember, now in your pocket. No downloads, almost no updates, just pure retro gaming.</p>
+    </div>
+
+    <div class="games-container">
+        <!-- Classic Arcade -->
+        <div class="category">
+            <h2>Classic Arcade</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-thumbnail">🐍</div>
+                    <div class="game-info">
+                        <div class="game-title">Snake</div>
+                        <div class="game-description">Guide your snake to eat pellets and grow longer. Avoid hitting the walls or yourself in this timeless classic.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1976</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">🏓</div>
+                    <div class="game-info">
+                        <div class="game-title">Pong</div>
+                        <div class="game-description">The game that started it all. Bounce the ball past your opponent in this iconic table tennis simulation.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1972</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">☄️</div>
+                    <div class="game-info">
+                        <div class="game-title">Asteroids</div>
+                        <div class="game-description">Pilot your spaceship through a field of asteroids. Shoot to survive in this vector graphics masterpiece.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1979</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">👾</div>
+                    <div class="game-info">
+                        <div class="game-title">Space Invaders</div>
+                        <div class="game-description">Defend Earth from waves of descending aliens. A true arcade legend that defined a generation.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1978</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">🔫</div>
+                    <div class="game-info">
+                        <div class="game-title">Breakout</div>
+                        <div class="game-description">Break through walls of bricks with a ball and paddle. Simple concept, endless challenge.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1976</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">🎯</div>
+                    <div class="game-info">
+                        <div class="game-title">Missile Command</div>
+                        <div class="game-description">Protect your cities from incoming missiles. Fast-paced action with strategic depth.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1980</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Maze & Puzzle -->
+        <div class="category">
+            <h2>Maze & Puzzle</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-thumbnail">🟡</div>
+                    <div class="game-info">
+                        <div class="game-title">Pac-Man</div>
+                        <div class="game-description">Navigate mazes, eat dots, and avoid ghosts. The most iconic arcade game ever created.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1980</div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">🧱</div>
+                    <div class="game-info">
+                        <div class="game-title">Tetris</div>
+                        <div class="game-description">Arrange falling blocks to clear lines. The most addictive puzzle game of all time.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1985</div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">🔲</div>
+                    <div class="game-info">
+                        <div class="game-title">Sokoban</div>
+                        <div class="game-description">Push boxes to their targets in this brain-teasing warehouse puzzle game.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 1982</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Racing & Sports -->
+        <div class="category">
+            <h2>Racing & Sports</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-thumbnail">🏎️</div>
+                    <div class="game-info">
+                        <div class="game-title">Racing</div>
+                        <div class="game-description">Top-down racing action. Avoid obstacles and compete for the best time.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 Classic</div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-thumbnail">⚽</div>
+                    <div class="game-info">
+                        <div class="game-title">Soccer</div>
+                        <div class="game-description">Simple 2D soccer action. Score goals and defend your net in fast-paced matches.</div>
+                        <div class="game-meta">
+                            <div class="meta-item">📅 Classic</div>
+                            <div class="meta-item">👤 1-2 Players</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Pocket Zero © 2025 · Nostalgia reimagined</p>
+    </footer>
+</body>
+</html>

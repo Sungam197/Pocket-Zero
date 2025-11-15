@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Arcade - Retro Gaming Console</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        nav {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e0e0e0;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .product-image {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #1a1a1a;
+        }
+
+        .console-mockup {
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 2/3;
+            background: #1a1a1a;
+            border-radius: 25px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 2px solid #222;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screen {
+            width: 60%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #0d4d4d 0%, #0a3d3d 100%);
+            border-radius: 8px;
+            margin: 0 auto;
+            border: 3px solid #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #0f8f8f;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex: 1;
+            padding-bottom: 1rem;
+        }
+
+        .joystick {
+            width: 80px;
+            height: 80px;
+            background: #2a2a2a;
+            border-radius: 50%;
+            border: 4px solid #1a1a1a;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .joystick::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: #1a1a1a;
+            border-radius: 50%;
+        }
+
+        .product-info h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #1a1a1a;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .cta-button {
+            background: #e0e0e0;
+            color: #0a0a0a;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .games-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .games-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .game-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: all 0.2s;
+        }
+
+        .game-card:hover {
+            border-color: #333;
+            transform: translateY(-4px);
+        }
+
+        .game-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .game-name {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .lifestyle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .lifestyle-image {
+            aspect-ratio: 4/3;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mini-console {
+            width: 120px;
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 1rem;
+            border: 2px solid #222;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .mini-screen {
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(135deg, #0d4d4d 0%, #0a3d3d 100%);
+            border-radius: 6px;
+            border: 2px solid #0a0a0a;
+            margin-bottom: 1rem;
+        }
+
+        .mini-joystick {
+            width: 50px;
+            height: 50px;
+            background: #2a2a2a;
+            border-radius: 50%;
+            border: 3px solid #1a1a1a;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mini-joystick::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 18px;
+            height: 18px;
+            background: #1a1a1a;
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #555;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-info h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">POCKET ZER0</div>
+        <div class="nav-links">
+            <a href="Game list.html">Games</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="product">
+        <div class="product-image">
+            <div class="console-mockup">
+                <div class="screen">◢◤</div>
+                <div class="controls">
+                    <div class="joystick"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1>Classic games.<br>Modern form.</h1>
+            <p class="tagline">Compact retro gaming console with built-in screen and timeless arcade classics.</p>
+            
+            <div class="price">$130</div>
+
+            <ul class="features">
+                <li>Integrated display</li>
+                <li>Precision joystick controls</li>
+                <li>Classic arcade games included</li>
+                <li>Ultra-portable design</li>
+                <li>Rechargeable battery</li>
+                <li>Open source software</li>
+            </ul>
+
+            <button class="cta-button">Coming Soon</button>
+
+            <p class="tagline"> </p>
+
+            <p class="tagline">We feature classic games you love, all in one device, with no downloads, purchases, or subscriptions.
+                Play anywhere, anytime. no wifi, bluetooth, or internet required. we constantly update our game library with new titles and improvements to keep the nostalgia alive.
+                adding new games is as simple as connecting to a computer via usbc and transferring files. with experience, you can even add your own games! with pocket zero, the golden age of gaming is always at your fingertips.
+
+            </p>
+        </div>
+    </section>
+
+    <section class="games-section" id="games">
+        <h2>Built-in Games</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-icon">🐍</div>
+                <div class="game-name">Snake</div>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">🏓</div>
+                <div class="game-name">Pong</div>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">☄️</div>
+                <div class="game-name">Asteroids</div>
+            </div>
+            <div class="game-card">
+                <div class="game-icon">👾</div>
+                <div class="game-name">More classics</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="games-section">
+        <h2>In Action</h2>
+        <div class="lifestyle-grid">
+            <div class="lifestyle-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                <div class="mini-console">
+                    <div class="mini-screen"></div>
+                    <div class="mini-joystick"></div>
+                </div>
+            </div>
+            <div class="lifestyle-image" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);">
+                <div class="mini-console">
+                    <div class="mini-screen"></div>
+                    <div class="mini-joystick"></div>
+                </div>
+            </div>
+            <div class="lifestyle-image" style="background: linear-gradient(135deg, #533483 0%, #3d2c5c 100%);">
+                <div class="mini-console">
+                    <div class="mini-screen"></div>
+                    <div class="mini-joystick"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Pocket Zero © 2025 · Nostalgia reimagined</p>
+    </footer>
+</body>
+</html>
